@@ -14,10 +14,13 @@ public class FizzBuzz {
         FizzBuzzNumber fizzBuzzNumber = new FizzBuzzNumber(input);
         String result = applyRuleForMultipleOfSpecialNumbers(fizzBuzzNumber);
 
-        if (fizzBuzzNumber.containsNumber("5")) {
-            if (result.contains(FizzBuzz.FIZZ)) {
-                result = result.replace(FizzBuzz.FIZZ, "");
+        if (fizzBuzzNumber.containsNumber("7")) {
+                result = result.replace(FizzBuzz.BUZZ, "");
+            if (fizzBuzzNumber.containsNumber("3")) {
+                result = FizzBuzz.FIZZ;
             }
+        } else if (fizzBuzzNumber.containsNumber("5")) {
+                result = result.replace(FizzBuzz.FIZZ, "");
         } else if (fizzBuzzNumber.containsNumber("3")) {
             result = FizzBuzz.FIZZ;
         }

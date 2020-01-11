@@ -153,4 +153,16 @@ public class FizzBuzzTest {
         //then
         assertEquals(FizzBuzz.BUZZWHIZZ, result);
     }
+
+    @Test
+    public void should_return_Fizz_when_say_75() {
+        //given
+        int input = 75;
+
+        //when
+        String result = this.fizzBuzz.say(input);
+
+        //then
+        assertEquals(FizzBuzz.FIZZ, result);
+    }
 }
