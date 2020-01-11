@@ -8,11 +8,11 @@ public class FizzBuzz {
 
     public String say(int input) {
 
-        if (input == 3) {
+        if (input % 3 == 0) {
             return FizzBuzz.FIZZ;
-        } else if (input == 5) {
+        } else if (input % 5 == 0) {
             return FizzBuzz.BUZZ;
-        } else if (input == 7) {
+        } else if (input % 7 == 0) {
             return FizzBuzz.WHIZZ;
         } else {
             return Integer.toString(input);
