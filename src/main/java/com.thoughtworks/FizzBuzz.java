@@ -11,39 +11,37 @@ public class FizzBuzz {
     public static String FIZZBUZZWHIZZ = FIZZ + BUZZ + WHIZZ;
 
     public String say(int input) {
-        FizzBuzzNumber fizzBuzzNumber = new FizzBuzzNumber(input);
-        String result = applyRuleForMultipleOfSpecialNumbers(fizzBuzzNumber);
+        String inputStr = Integer.toString(input);
+        String result = applyRuleForMultipleOfSpecialNumbers(input);
 
-        if (fizzBuzzNumber.containsNumber("7")) {
+        if (inputStr.contains("7")) {
                 result = result.replace(FizzBuzz.BUZZ, "");
-            if (fizzBuzzNumber.containsNumber("3")) {
+            if (inputStr.contains("3")) {
                 result = FizzBuzz.FIZZ;
             }
-        } else if (fizzBuzzNumber.containsNumber("5")) {
+        } else if (inputStr.contains("5")) {
                 result = result.replace(FizzBuzz.FIZZ, "");
-        } else if (fizzBuzzNumber.containsNumber("3")) {
+        } else if (inputStr.contains("3")) {
             result = FizzBuzz.FIZZ;
         }
         return result;
     }
 
-    private String applyRuleForMultipleOfSpecialNumbers(FizzBuzzNumber input) {
-
+    private String applyRuleForMultipleOfSpecialNumbers(int input) {
         String result = "";
 
-        if (input.isMultipleOf(3)) {
+        if (input % 3 == 0) {
             result += FizzBuzz.FIZZ;
         }
-        if (input.isMultipleOf(5)) {
+        if (input % 5 == 0) {
             result += FizzBuzz.BUZZ;
         }
-        if (input.isMultipleOf(7)) {
+        if (input % 7 == 0) {
             result += FizzBuzz.WHIZZ;
         }
         if (result.isEmpty()) {
-            result = input.getNumInStr();
+            result = Integer.toString(input);
         }
         return result;
     }
-
 }
