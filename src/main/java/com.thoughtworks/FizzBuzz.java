@@ -12,12 +12,16 @@ public class FizzBuzz {
 
     public String say(int input) {
         FizzBuzzNumber fizzBuzzNumber = new FizzBuzzNumber(input);
+        String result = applyRuleForMultipleOfSpecialNumbers(fizzBuzzNumber);
 
-        if (fizzBuzzNumber.containsNumber("3")) {
-            return FizzBuzz.FIZZ;
-        } else {
-            return applyRuleForMultipleOfSpecialNumbers(fizzBuzzNumber);
+        if (fizzBuzzNumber.containsNumber("5")) {
+            if (result.contains(FizzBuzz.FIZZ)) {
+                result = result.replace(FizzBuzz.FIZZ, "");
+            }
+        } else if (fizzBuzzNumber.containsNumber("3")) {
+            result = FizzBuzz.FIZZ;
         }
+        return result;
     }
 
     private String applyRuleForMultipleOfSpecialNumbers(FizzBuzzNumber input) {

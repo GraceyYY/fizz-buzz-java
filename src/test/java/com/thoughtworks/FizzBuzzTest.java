@@ -73,7 +73,7 @@ public class FizzBuzzTest {
     @Test
     public void should_return_FizzBuzz_when_say_a_multiple_of_3_and_5() {
         //given
-        int input = 15;
+        int input = 60;
 
         //when
         String result = this.fizzBuzz.say(input);
@@ -109,7 +109,7 @@ public class FizzBuzzTest {
     @Test
     public void should_return_FizzBuzz_when_say_a_multiple_of_3_and_5_and_7() {
         //given
-        int input = 3 * 5 * 7;
+        int input = 3 * 5 * 7 * 2;
 
         //when
         String result = this.fizzBuzz.say(input);
@@ -140,5 +140,17 @@ public class FizzBuzzTest {
 
         //then
         assertEquals(FizzBuzz.FIZZ, result);
+    }
+
+    @Test
+    public void should_return_BuzzWhizz_when_say_35() {
+        //given
+        int input = 35;
+
+        //when
+        String result = this.fizzBuzz.say(input);
+
+        //then
+        assertEquals(FizzBuzz.BUZZWHIZZ, result);
     }
 }
