@@ -85,7 +85,7 @@ public class FizzBuzzTest {
     @Test
     public void should_return_FizzBuzz_when_say_a_multiple_of_5_and_7() {
         //given
-        int input = 35;
+        int input = 140;
 
         //when
         String result = this.fizzBuzz.say(input);
@@ -116,5 +116,29 @@ public class FizzBuzzTest {
 
         //then
         assertEquals(FizzBuzz.FIZZBUZZWHIZZ, result);
+    }
+
+    @Test
+    public void should_return_Fizz_when_say_a_number_contains_3() {
+        //given
+        int input = 13;
+
+        //when
+        String result = this.fizzBuzz.say(input);
+
+        //then
+        assertEquals(FizzBuzz.FIZZ, result);
+    }
+
+    @Test
+    public void should_return_Fizz_when_say_a_number_contains_3_but_is_multiple_of_special_numbers() {
+        //given
+        int input = 30;
+
+        //when
+        String result = this.fizzBuzz.say(input);
+
+        //then
+        assertEquals(FizzBuzz.FIZZ, result);
     }
 }
